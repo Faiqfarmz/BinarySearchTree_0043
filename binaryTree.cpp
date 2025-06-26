@@ -141,6 +141,10 @@ void inorder(Node *ptr)
         cout << ptr->info << " ";
     }
 
- 
+        bool isEmpty()
+    {
+        // Checks if the tree is empty
+        return ROOT == nullptr;
+    }
 };
 
