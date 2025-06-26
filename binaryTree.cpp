@@ -37,6 +37,11 @@ class BinaryTree{
             Node *parent = nullptr;
             Node *currentNode = nullptr;
 
+            // Step 4: Locate the node which will be the parent of the node
+            Node *parent = nullptr;
+            Node *currentNode = nullptr;
+            search(x, parent, currentNode);
+            
 
 
             
