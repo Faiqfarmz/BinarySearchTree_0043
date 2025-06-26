@@ -2,30 +2,38 @@
 #include <iostream>
 using namespace std;
 
-class Node{
+class Node
+{
+public:
     int info;
     Node *leftchild;
     Node *rightchild;
 
-    //  Constructor for the node class
-    Node(){
-        leftchild = nullptr; // Initilize left child to null
-        rightchild = nullptr; // Initilize right child to null
+    // Constructor for the node class
+    Node()
+    {
+        leftchild = nullptr;  // Initialize left child to null
+        rightchild = nullptr; // Initialize right child to null
     }
 };
 
-class BinaryTree{
-    public:
-        Node *ROOT;
+class BinaryTree
+{
+public:
+    Node *ROOT;
 
-    BinaryTree(){
+    BinaryTree()
+    {
         ROOT = nullptr; // Initializing ROOT to null
     }
 
-        void insert(){
-            int x;
-            cout << "Masukkan nilai ";
-            cin >> x;
+    void insert()
+    {
+        int x;
+        cout << "Masukan nilai: ";
+        cin >> x;
+
+
 
               // Step 1: Allocate memory for the new node
             Node *newNode = new Node();
@@ -74,5 +82,20 @@ class BinaryTree{
 
             
     }
+    void search(int element, Node *&parent, Node *&currentNode)
+    {
+        // This function searches the currentNode of the specified Node as well as the current Node of its parent
+        currentNode = ROOT;
+        parent = nullptr;
+        while ((currentNode != nullptr) && (currentNode->info != element))
+        {
+            parent = currentNode;
+            if (element < currentNode->info)
+                currentNode = currentNode->leftchild;
+            else
+                currentNode = currentNode->rightchild;
+        }
+    }
 
-}
+
+};
